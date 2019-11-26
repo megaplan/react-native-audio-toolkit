@@ -38,7 +38,7 @@ class Recorder extends EventEmitter {
 
     let appEventEmitter = Platform.OS === 'ios' ? NativeAppEventEmitter : DeviceEventEmitter;
 
-    appEventEmitter.addListener('RCTAudioRecorderEvent:' + this._recorderId, (payload: Event) => {
+    appEventEmitter.addListener('RCTAudioRecorderEvent:' + this._recorderId, (payload) => {
       this._handleEvent(payload.event, payload.data);
     });
   }

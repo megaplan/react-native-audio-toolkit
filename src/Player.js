@@ -46,7 +46,7 @@ class Player extends EventEmitter {
 
     const appEventEmitter = Platform.OS === 'ios' ? NativeAppEventEmitter : DeviceEventEmitter;
 
-    appEventEmitter.addListener(`RCTAudioPlayerEvent:${this._playerId}`, (payload: Event) => {
+    appEventEmitter.addListener(`RCTAudioPlayerEvent:${this._playerId}`, (payload) => {
       this._handleEvent(payload.event, payload.data);
     });
   }
